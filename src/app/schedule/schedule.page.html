@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" ></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>schedule</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    
+  <ion-item>
+    <ion-button slot="end" (click)="presentAlertCheckbox()"><ion-icon slot="start" name="filter-outline">
+        
+    </ion-icon> Filter</ion-button>
+    <!-- <ion-datetime slot="start" displayFormat="DD MMM YYYY" placeholder="Select Date" style="
+    color: white;</ion-datetime>
+"> -->
+<label for="meeting">Date </label>
+<input id="meeting" type="date" value="2020-10-31"/>
+
+  </ion-item>
+
+  <table class="table table-striped">
+      <thead>
+        <tr>
+         
+          <th scope="col">Title</th>
+          <th scope="col">Problem</th>
+          <th scope="col">Status</th>
+          
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let item of scheduleData">
+            <div class="flex">        
+                <div  *ngIf="item.title == 'Landscaping'" class="green"></div>
+                <div  *ngIf="item.title == 'Pest Control'" class="brwn"></div>
+                <div  *ngIf="item.title == 'Rodent Control'" class="red"></div>
+                <div  *ngIf="item.title == 'Cats and Dogs'" class="prop"></div>
+                <div  *ngIf="item.title == 'Sterilization'" class="sky"></div>
+          <td style="margin-top: 8px">
+             
+            {{item.title}}
+          
+          </td>
+             </div> 
+
+
+          <td>{{item.problemdesc}}</td>
+          <td>{{item.Status}}</td>
+        </tr>
+      
+      </tbody>
+    </table>
+</ion-content>

@@ -1,0 +1,32 @@
+[
+    {
+      "name": "Ethel Price",
+      "gender": "female",
+      "company": "Complete",
+      "age": 22
+    },
+    {
+      "name": "Claudine Neal",
+      "gender": "female",
+      "company": "Working on",
+      "age": 55
+    },
+    {
+      "name": "Beryl Rice",
+      "gender": "female",
+      "company": "cancel",
+      "age": 67
+    },
+    {
+      "name": "Wilder Gonzales",
+      "gender": "male",
+      "company": "Complete"
+    },
+    {
+      "name": "Georgina Schultz",
+      "gender": "female",
+      "company": "cancel"
+    }
+  ]
+  
+  

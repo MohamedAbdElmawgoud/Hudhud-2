@@ -1,0 +1,57 @@
+ion-content
+{
+    --background: #e4e2e2;
+    
+}
+
+ion-item
+{
+    --background: #e4e2e2;
+}
+
+
+section{
+    width: -webkit-fill-available;
+}
+
+img{
+    margin: 0px auto;
+}
+
+.item-native
+{
+    padding: 0px;
+}
+
+.app-item
+{
+    --padding: 0px;
+}
+ion-item
+{
+    .item-native{
+        .item-inner
+        {
+            padding: 0px !important;
+        }
+
+    }
+  
+}
+
+
+.item-highlight {
+    --display: none !important;
+}
+
+.item-inner-highlight
+{
+    --display: none !important;
+}
+
+.btns
+{ 
+--border-radius: 21px;
+width: 80%;
+margin: 18px 2px;
+}

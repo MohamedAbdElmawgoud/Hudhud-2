@@ -1,0 +1,42 @@
+
+
+ion-content
+{
+    --background: #e4e2e2;
+}
+
+ion-input
+{
+    background: white;
+    border-radius: 8px;
+    border: gray 1px solid;
+    font: caption;
+}
+
+ion-item
+{
+    --background: #e4e2e2;
+}
+
+ion-label
+{
+    margin: 16px 0px;
+}
+
+ion-textarea
+{
+    background: white;
+    border-radius: 8px;
+    border: gray 1px solid;
+}
+
+ion-item-divider
+{
+    padding: 0px;
+    background: #e4e2e2;
+}
+
+ion-label{
+    color: #000000 !important;
+    font-size: 17px !important;
+}

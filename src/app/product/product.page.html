@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+   
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-buttons slot="start">
+        <ion-back-button icon="chevron-back-outline" ></ion-back-button>
+      </ion-buttons>
+    <ion-title>product</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+
+  <section>
+    <img src="assets/images/Icon1.png" hspace="2" (click)="btncat1()" >
+    <img src="assets/images/Icon2.png" hspace="2" (click)="btncat2()" />
+    <img src="assets/images/Icon3.png" hspace="2" (click)="btncat3()" >
+    <img src="assets/images/Icon4.png" hspace="2" (click)="btncat4()" />
+    <img src="assets/images/Icon5.png" hspace="2" (click)="btncat5()" />
+  </section>
+
+<ion-card class="horizantal-cards">
+  <ion-card *ngFor="let x of usersList;let i=index">
+    <img src="assets/images/1.png" />
+    <ion-card-header>
+      <ion-card-content> {{x.itName}}</ion-card-content> 
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{x.Price}} JD
+    </ion-card-content>
+    <ion-button class="btn-card" (click)="nextpage()"  expand="full" color="success">Default</ion-button>
+  
+  </ion-card>
+  </ion-card>
+  
+ 
+
+  </ion-content>
+

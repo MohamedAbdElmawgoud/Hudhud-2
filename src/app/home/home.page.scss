@@ -1,0 +1,61 @@
+ion-searchbar
+{
+    --border-radius:24px;
+}
+
+section
+{
+    text-align: center;
+    background-color: #d3d3d380;
+    padding-top: 5px;
+}
+
+.horizantal-cards
+{
+    ion-card
+    {
+        display: inline-block;
+        width: 43%;
+
+    }
+    
+}
+
+ion-card-content
+{
+    text-align: center;
+    height: 55px;
+    overflow: auto;
+}
+
+ion-card-content-d
+{
+    text-align: center;
+     height: 50px;
+    
+}
+
+
+
+ion-card-header
+{
+    text-align: center;
+    padding: 5px 0px;
+}
+
+.btn-card
+{ 
+--border-radius: 21px;
+width: 90%;
+}
+
+.btn-card1
+{ 
+--border-radius: 21px;
+width: 32%;
+height: 30px;
+font-size: 16px;
+font-weight: bolder;
+text-transform: capitalize;
+font-family: math;
+}

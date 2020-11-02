@@ -1,0 +1,125 @@
+ion-item
+{
+    --color: white;
+    --background: orange;
+}
+
+.ngx-datatable, .info {
+    width: unset;
+}
+
+.datatable-header-inner
+{
+width: -webkit-fill-available !important;
+}
+
+.ngx-datatable.bootstrap .datatable-header .datatable-header-cell {
+    vertical-align: bottom;
+    padding: 0.75rem 1.75rem;
+}
+
+
+
+/*
+.ngx-datatable, .info {
+    text-align: left;
+    width: unset;
+    margin: 0px;
+}
+
+.ngx-datatable.bootstrap .datatable-header {
+    height: unset !important;
+    width: fit-content !important;
+}
+
+.datatable-header
+{
+    --width: fit-content !important;
+}
+*/
+.complete-row
+{
+    --background-color: green;
+}
+
+
+.cancel-row
+{
+   --background-color: red;
+}
+
+ion-button
+{
+    --background: white;
+    color: black;
+}
+
+.alert-head.sc-ion-alert-md {
+    text-align: center;
+    background: orange;
+}
+
+.alert-title.sc-ion-alert-md {
+    color: white;
+}
+::-webkit-inner-spin-button { 
+    display:none;
+  }
+  ::-webkit-calendar-picker-indicator { background-color:white}
+  input[type=date]{
+    font-size:18px;
+  }
+  ::-webkit-datetime-edit-text { color:#555555}
+  ::-webkit-datetime-edit-month-field { color:#555555 }
+  ::-webkit-datetime-edit-day-field { color: #555555; }
+  ::-webkit-datetime-edit-year-field { color:#555555; }
+  ::-webkit-calendar-picker-indicator{ 
+    background-image: url(http://icons.iconarchive.com/icons/dakirby309/simply-styled/256/Calendar-icon.png);
+        background-position:center;
+         background-size:20px 20px;
+         background-repeat:no-repeat;
+        color:rgba(204,204,204,0);
+  }
+  label{
+      margin-right: 10px
+  }
+  .green {
+    border-left: 6px solid #3dd500;
+    border-radius: 2px;
+    height:30px;
+    margin-right: 5px
+  }
+  .brwn {
+    border-left: 6px solid #efa96d;
+    border-radius: 2px;
+    height:30px;
+    margin-right: 5px
+  }
+  .red {
+    border-left: 6px solid #ee2b2b;
+    border-radius: 2px;
+    height:30px;
+    margin-right: 5px
+  }
+  .prop {
+    border-left: 6px solid #ff24af;
+    border-radius: 2px;
+    height:30px;
+    margin-right: 5px
+  }
+  .sky {
+    border-left: 6px solid #008CD5;
+    border-radius: 2px;
+    height:30px;
+    margin-right: 5px
+  }
+  .flex{
+    display: flex;
+  
+  }
+  table{
+    width: 100%;
+    //table-layout: fixed;
+   // width: 33.3333%
+  }
+  

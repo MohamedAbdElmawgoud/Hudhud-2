@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" ></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>services</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="horizantal-cards">
+    <ion-card-header>
+    <img src="assets/images/garden.png" />
+    </ion-card-header>
+  <!--  <ion-card-header>
+      <ion-card-subtitle>Madison, WI</ion-card-subtitle> 
+    </ion-card-header>
+  
+    <ion-card-content>
+     40JD
+    </ion-card-content>-->
+    <ion-card-content>
+    <ion-button class="btn-card" (click)="nextpage()" expand="full" color="success">Landscaping</ion-button>
+  </ion-card-content>
+  </ion-card>
+  <ion-card class="horizantal-cards">
+    <ion-card-header>
+    <img src="assets/images/pets.png" />
+    </ion-card-header>
+  <!--  <ion-card-header>
+      <ion-card-subtitle>Madison, WI</ion-card-subtitle> 
+    </ion-card-header>
+  
+    <ion-card-content>
+     40JD
+    </ion-card-content>-->
+    <ion-card-content>
+    <ion-button class="btn-card" (click)="nextpage()"  expand="full" color="pink">Cats and Dogs</ion-button>
+  </ion-card-content>
+  </ion-card>
+</ion-content>

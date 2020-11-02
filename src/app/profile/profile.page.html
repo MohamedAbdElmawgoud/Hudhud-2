@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" icon="chevron-back-outline" ></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  
+   <!--<ion-item  style="text-align: center;">
+      <ion-thumbnail style="text-align: center;">
+        <ion-img src="assets/images/Ellipse 3.png"></ion-img>
+      </ion-thumbnail>
+      <ion-label>Name</ion-label>
+    </ion-item>
+
+    <ion-item>
+
+    </ion-item>-->
+    
+    <div class="card">
+      <div class="header">
+        <div class="avatar">
+          <img src="assets/images/Ellipse 3.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <div class="user-meta ion-text-center">
+        <h5 class="playername">{{FirstName}}</h5>
+        <h6 class="country">{{Phone}}</h6>
+     <!--  <h6 class="ranking">Current ranking: <ion-chip>
+          <ion-label>2</ion-label>
+          </ion-chip>
+        </h6>--> 
+     
+          <ion-item-divider style="padding: 0px;">
+            <ion-item lines="none" class="itemscol">
+              <ion-avatar slot="start">
+                <img src="assets/images/points.png">
+              </ion-avatar>
+              <ion-label>
+                <h2>points</h2>
+                <p>{{point}}</p>
+              </ion-label>
+            </ion-item>
+      
+            
+          
+
+            <ion-item lines="none" class="itemscol">
+              <ion-avatar slot="start">
+                <img src="assets/images/location.png">
+              </ion-avatar>
+              <ion-label>
+                <h2>Loction</h2>
+                <p>{{LocationName}}</p>
+              </ion-label>
+            </ion-item>
+
+          </ion-item-divider>
+      
+        <strong style="font-size: 24px;">Settings</strong>
+      </div>
+     
+      <ion-item class="itemsBlock" (click)="presentAlertPrompt()">
+        <img src="assets/images/Edit.png" slot="start"> 
+        <p >Edit Profile</p>
+  <!-- <ion-button expand="full" color="white" (click)="presentAlertPrompt()">Profile</ion-button>--> 
+  </ion-item>
+
+  <ion-item class="itemsBlock" (click)="presentPassword()">
+    <img src="assets/images/ChangePass.png" slot="start"> 
+    <p >Change Password</p>
+    </ion-item>
+     
+    <ion-item class="itemsBlock" (click)="presentNotification()" >
+      <img src="assets/images/Notifactin.png" slot="start"> 
+      <p >Notification</p>
+      </ion-item>
+
+      <ion-item class="itemsBlock" (click)="presentLanguage()">
+        <img src="assets/images/Language.png" slot="start"> 
+        <p >Language</p>
+        </ion-item>
+      
+    </div>
+
+</ion-content>

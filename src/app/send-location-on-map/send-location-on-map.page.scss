@@ -1,0 +1,31 @@
+.map{
+    height: 100%;
+
+    
+}
+.marker{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom:0;
+    margin: auto;
+    width: 32px; // image width
+    height: 24px; // image height
+    z-index: 1;
+}
+
+ion-content{
+    --background:#fbfbfbfb;
+    font-family: 'open sans';
+}
+ion-grid{
+    position: absolute;
+    bottom: 14px;
+    left: 0px;
+    width: 100%;
+
+}
+ion-footer{
+    --background:#fff;  
+}
