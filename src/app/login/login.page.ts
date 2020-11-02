@@ -50,6 +50,7 @@ export class LoginPage  {
   ) { }
 
   ngOnInit() {
+    this.navCtrl.navigateRoot('/home');
   }
 
   // Dismiss Login Modal
@@ -99,11 +100,11 @@ async loginFace(){
       error => {
         console.log('error',error);
       },
-      // () => {
-      //   this.dismissLogin();
-      //  this.navCtrl.navigateRoot('/home'); 
+      () => {
+        this.dismissLogin();
+       this.navCtrl.navigateRoot('/home'); 
        
-      // }
+      }
     );
   }
 }
