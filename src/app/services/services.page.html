@@ -11,9 +11,10 @@
 </ion-header>
 
 <ion-content>
-  <ion-card class="horizantal-cards">
-    <ion-card-header>
-    <img src="assets/images/garden.png" />
+  <ion-card class="horizantal-cards" 
+  *ngFor="let service of services">
+    <ion-card-header  (click)= "nextpage(service.Id)"> 
+    <img src= {{service.url}} />
     </ion-card-header>
   <!--  <ion-card-header>
       <ion-card-subtitle>Madison, WI</ion-card-subtitle> 
@@ -23,10 +24,10 @@
      40JD
     </ion-card-content>-->
     <ion-card-content>
-    <ion-button class="btn-card" (click)="nextpage()" expand="full" color="success">Landscaping</ion-button>
+    <!-- <ion-button class="btn-card" (click)="nextpage()" expand="full" color="success">{{service.Name}}</ion-button> -->
   </ion-card-content>
   </ion-card>
-  <ion-card class="horizantal-cards">
+  <!-- <ion-card class="horizantal-cards">
     <ion-card-header>
     <img src="assets/images/pets.png" />
     </ion-card-header>
@@ -36,9 +37,9 @@
   
     <ion-card-content>
      40JD
-    </ion-card-content>-->
+    </ion-card-content>
     <ion-card-content>
     <ion-button class="btn-card" (click)="nextpage()"  expand="full" color="pink">Cats and Dogs</ion-button>
   </ion-card-content>
-  </ion-card>
+  </ion-card> -->
 </ion-content>

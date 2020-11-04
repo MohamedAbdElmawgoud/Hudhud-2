@@ -68,7 +68,7 @@ const routes: Routes = [
     loadChildren: () => import('./about-us/about-us.module').then( m => m.AboutUsPageModule)
   },
   {
-    path: 'service-detail',
+    path: 'service-detail', data: {id : ''},
     loadChildren: () => import('./service-detail/service-detail.module').then( m => m.ServiceDetailPageModule)
   },
   {

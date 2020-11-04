@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 //import { MenuController, AlertController } from '@ionic/angular';
-//import data from '../../assets/company.json';
 import {AlertController} from '@ionic/angular';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Storage } from '@ionic/storage';
+import { DatePipe } from '@angular/common'
+import { ModalController } from "@ionic/angular";
 
 
 @Component({
@@ -12,8 +14,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class SchedulePage implements OnInit {
   scheduleData: any;
-
-  constructor(public alertController: AlertController,public http : HttpClient) {}
+  dates;
+  constructor(public alertController: AlertController,
+    private storage: Storage,
+    public modalController: ModalController,
+    public datepipe: DatePipe,
+    public http : HttpClient) {}
 
   url: string;
 
@@ -21,13 +27,15 @@ export class SchedulePage implements OnInit {
   tableStyle ='bootstrap';
 
 
-  ngOnInit() {
+  ngOnInit() { //02/11/2020
+    this.dates = '02/11/2020' //new Date().toISOString().split('T')[0];
     this.schedule()
   }
   /*Dependences *//*Dependences */
   
- 
+  
   schedule(){
+  
     var headers = new Headers();
     headers.append('Access-Control-Allow-Origin' , '*');
     headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
@@ -38,7 +46,7 @@ export class SchedulePage implements OnInit {
       headers: headers
    }
    this.url ="https://diamonddmc.com/hudhud/schedule.php?"
-   this.http.get(this.url  + "userid=1" + "&dates=02/11/2020", { headers: new HttpHeaders({
+   this.http.get(this.url  + "userid=1" + "&dates=" + this.dates, { headers: new HttpHeaders({
     'Authorization': '{data}',
     'Content-Type': 'application/json',
   }), responseType: 'text'}).subscribe(data =>  {
@@ -48,7 +56,9 @@ export class SchedulePage implements OnInit {
   })
   }
 
-  filterSchedule(){
+  filterSchedule(type){
+    let latest_date =this.datepipe.transform(this.dates, 'dd/MM/yyyy');
+    console.log(latest_date)
     var headers = new Headers();
     headers.append('Access-Control-Allow-Origin' , '*');
     headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
@@ -58,17 +68,25 @@ export class SchedulePage implements OnInit {
      let options = {
       headers: headers
    }
-   this.url ="https://diamonddmc.com/hudhud/schedule%20Filter.php?"
-   this.http.get(this.url  + "userid=1" + "&dates=02/11/2020"+"&Service=Landscaping", { headers: new HttpHeaders({
-    'Authorization': '{data}',
-    'Content-Type': 'application/json',
-  }), responseType: 'text'}).subscribe(data =>  {
+   this.storage.get('userId').then( id=>{ 
+     console.log(this.dates)
+    this.url ="https://diamonddmc.com/hudhud/schedule%20Filter.php?"
+    this.http.get(this.url  + "userid="+ id + "&dates=" + this.dates+"&Service="+ type, { headers: new HttpHeaders({
+     'Authorization': '{data}',
+     'Content-Type': 'application/json',
+   }), responseType: 'text'}).subscribe(data =>  {
+     
     
-   
-    console.log('my data: ', data);
-    
-  })
+     console.log('my data: ', data);
+     this.scheduleData = JSON.parse(data);
+   })
+
+   })
+  
   }
+
+
+
    getRowClass = (row) => {
     console.log('rowClass')
     const isComplete = row.company =='Complete';
@@ -112,52 +130,61 @@ this.menuCtrl.toggle();
 
 async presentAlertCheckbox() {
   const alert = await this.alertController.create({
-    cssClass: 'my-custom-class',
+    cssClass : 'background : black',
     header: 'Filter',
+    message: `
+    <br>
+    
+    <img src="assets/images/Icon1.png" style="margin-left: 30px;">
+    <img src="assets/images/Icon2.png" style=" margin-left: 2%;">
+    <img src="assets/images/Icon3.png" style=" margin-left: 2%;">
+    <img src="assets/images/Icon4.png" style=" margin-left: 2%;">
+    <br>
+    <br>
+    <img src="assets/images/Icon5.png" style=" margin-left: 2%;">
+    <img src="assets/images/Icon6.png" style=" margin-left: 2%;">
+    <img src="assets/images/Icon7.png" style=" margin-left: 2%;">
+    <img src="assets/images/Icon8.png" style=" margin-left: 2%;">
+   
+    `,
     inputs: [
       {
-        name: 'checkbox1',
+        name: 'Landscaping',
         type: 'checkbox',
-        label: 'Checkbox 1',
-        value: 'value1',
+        label: 'Landscaping',
+        value: 'Landscaping', 
+        
+       
         checked: true
       },
-
+     
       {
-        name: 'checkbox2',
+        name: 'Pest Control',
         type: 'checkbox',
-        label: 'Checkbox 2',
-        value: 'value2'
+        label: 'Pest Control',
+        value: 'Pest Control'
       },
 
       {
-        name: 'checkbox3',
+        name: 'Sterilization',
         type: 'checkbox',
-        label: 'Checkbox 3',
-        value: 'value3'
+        label: 'Sterilization',
+        value: 'Sterilization'
       },
 
       {
-        name: 'checkbox4',
+        name: 'Rodent Control',
         type: 'checkbox',
-        label: 'Checkbox 4',
-    //  annimated: ' assets/images/Mask Group 20.png' ,
-  //  message: '<img src="assets/images/Mask Group 20.png">',
-        value: 'value4'
+        label: 'Rodent Control',
+   
+        value: 'Rodent Control'
       },
 
       {
-        name: 'checkbox5',
+        name: 'Cats and Dogs',
         type: 'checkbox',
-        label: 'Checkbox 5',
-        value: 'value5'
-      },
-
-      {
-        name: 'checkbox6',
-        type: 'checkbox',
-        label: 'Checkbox 6 ',
-        value: 'value6'
+        label: 'Cats and Dogs',
+        value: 'Cats and Dogs'
       }
     ],
     buttons: [
@@ -170,8 +197,9 @@ async presentAlertCheckbox() {
         }
       }, {
         text: 'Ok',
-        handler: () => {
-          console.log('Confirm Ok');
+        handler: (alertData) => {
+          console.log('Confirm Ok' ,alertData);
+          this.filterSchedule(alertData)
         }
       }
     ]

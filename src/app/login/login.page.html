@@ -33,7 +33,9 @@
                 <br>
                 <br>
                 <ion-item lines="none">
-                  <ion-input formControlName="email" type="mail" placeholder="Enter Your mail" >
+                  <ion-input formControlName="email"
+                  value="{{user.email}}"
+                  type="mail" placeholder="Enter Your mail" >
                     <ion-icon class="icon" 
                     style="margin-right: 6px;"
                     name="mail-outline"></ion-icon>
@@ -43,14 +45,18 @@
                
                 
                 <ion-item lines="none">
-                  <ion-input formControlName="password" type="password" placeholder="Enter Your Password" >
+                  <ion-input formControlName="password" 
+                  value="{{user.password}}"
+                  type="password" placeholder="Enter Your Password" >
                     <ion-icon style="margin-right: 6px;" name="lock-closed-outline" slot="start">
                     </ion-icon>
                   </ion-input>
                 </ion-item>
             
                 <ion-item class="itemgray">
-                  <ion-checkbox color="primary" Type="md" slot="start" style="margin-right: 6px;"></ion-checkbox>
+                  <ion-checkbox color="primary"
+                  [(ngModel)]="remember" [ngModelOptions]="{standalone: true}"
+                  Type="md" slot="start" style="margin-right: 6px;"></ion-checkbox>
                   <ion-label>Remember Password</ion-label>
                   <a slot="end" href="forget-pass"  style="color:#fc7e00">
                     <p>forget password?</p> 

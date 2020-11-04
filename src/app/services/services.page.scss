@@ -1,5 +1,4 @@
-ion-content
-{
+ion-content{
     --background: #e4e2e2;
     text-align: center;
 }
@@ -19,8 +18,10 @@ ion-card-header{
 
     }
 
-    ion-card-content
-    {
+    ion-card-content {
         padding: 0px;
     }
     
+    ion-button{
+        font-size: 12px
+    }

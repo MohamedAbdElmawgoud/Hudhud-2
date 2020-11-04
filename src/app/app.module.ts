@@ -15,6 +15,8 @@ import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
 import { IonicStorageModule } from '@ionic/storage';
+import { DatePipe } from '@angular/common'
+import { NativeGeocoder } from "@ionic-native/native-geocoder/ngx";
 
 
 @NgModule({
@@ -26,6 +28,7 @@ import { IonicStorageModule } from '@ionic/storage';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
+    
     IonicStorageModule.forRoot() 
   ],
   providers: [
@@ -34,6 +37,8 @@ import { IonicStorageModule } from '@ionic/storage';
     Connectivity,
     AndroidPermissions,
     Geolocation,
+    DatePipe,
+    NativeGeocoder ,
     LocationAccuracy,
     GoogleMaps,
   

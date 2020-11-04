@@ -13,6 +13,7 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { Storage } from '@ionic/storage';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
+import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
 
 @Component({
   selector: 'app-appointment',
@@ -55,12 +56,14 @@ export class AppointmentPage implements OnInit {
     private storage: Storage,
     private androidPermissions : AndroidPermissions,
     private locationAccuracy : LocationAccuracy,
+    private nativeGeocoder: NativeGeocoder,
   
   ) {
 
   }
 
   ngOnInit() {
+    this.getLocationName()
   }
 
   launchLocationPage() {
@@ -81,7 +84,7 @@ export class AppointmentPage implements OnInit {
       headers: headers
     }
 
-    this.storage.get('userId').then(async id=>{
+    this.storage.get('userId').then( id=>{
       this.url = "https://diamonddmc.com/hudhud/Scheduleadd.php?";
       this.url = this.url + "ReqeustDate=" + this.today +
         "&userid="+id+"&Service=" + this.appointmentForm.value.Services +
@@ -191,6 +194,21 @@ askToTurnOnGPS() {
           reader.readAsDataURL($event.target.files[0]);
         
         
+  }
+  getLocationName(){
+    console.log('start')
+    let options: NativeGeocoderOptions = {
+      useLocale: true,
+      maxResults: 5
+  };
+  
+  this.nativeGeocoder.reverseGeocode(30.0807424,31.261085400000002, options)
+    .then((result: NativeGeocoderResult[]) => console.log(JSON.stringify(result[0])))
+    .catch((error: any) => console.log(error));
+  
+  this.nativeGeocoder.forwardGeocode('Berlin', options)
+    .then((result: NativeGeocoderResult[]) => console.log('The coordinates are latitude=' + result[0].latitude + ' and longitude=' + result[0].longitude))
+    .catch((error: any) => console.log(error));
   }
 }
 class ImageSnippet {

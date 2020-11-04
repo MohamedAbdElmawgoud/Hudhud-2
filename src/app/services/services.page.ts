@@ -8,13 +8,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./services.page.scss'],
 })
 export class ServicesPage implements OnInit {
+  services: any;
   url: string;
 
   constructor(private http: HttpClient, private router: Router) {
 
   }
-  nextpage() {
-    this.router.navigate(['service-detail']);
+  nextpage(id) {
+    this.router.navigate(['service-detail', { id:id}]);
   }
 
   ngOnInit() {
@@ -47,7 +48,7 @@ export class ServicesPage implements OnInit {
     }).subscribe(data => {
 
       console.log('my data: ', data);
-
+      this.services = JSON.parse(data);
     })
 
 

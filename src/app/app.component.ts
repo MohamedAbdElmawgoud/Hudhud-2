@@ -20,7 +20,7 @@ export class AppComponent {
     
   ) {
     this.initializeApp();
-    this.navCtrl.navigateRoot('/home'); 
+   // this.navCtrl.navigateRoot('/home'); 
     
   }
 
