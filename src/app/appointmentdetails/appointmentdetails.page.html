@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu/menu/tabs/appointment"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+
+
+
+      <ion-button>
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+
+      <ion-button>
+        <ion-icon name="notifications"></ion-icon>
+      </ion-button>
+
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+
+    <ion-title>appointment Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src="assets/images/garden.png">
+  <h1>{{name}}</h1>
+  <ion-item >
+  <p style="margin-top: 0">{{date}}</p>
+  
+</ion-item>
+
+    <p class="problemDesc" >
+      {{detail}}
+    </p>
+
+ 
+</ion-content>

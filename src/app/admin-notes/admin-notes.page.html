@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Admin-notes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" defaultHref="/menu/tabs/appointment-emp"  routerDirection="back"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+<ion-row>
+<ion-col size-sm="6">
+  <ion-label style="margin: 16px 0px;" position="stacked">contact</ion-label>
+    <ion-input type="name" placeholder=""></ion-input>
+</ion-col>
+<ion-col size-sm="6">
+  <ion-label style="margin: 16px 0px;" position="stacked">cost</ion-label>
+    <ion-input type="tel" placeholder=""></ion-input>
+</ion-col>
+
+</ion-row>
+
+<ion-row>
+  <ion-col size-sm="6">
+    <ion-label style="margin: 16px 0px;" position="stacked">warranty</ion-label>
+      <ion-input type="number" placeholder=""></ion-input>
+  </ion-col>
+  <ion-col size-sm="6">
+    <ion-label style="margin: 16px 0px;" position="stacked">traps</ion-label>
+      <ion-input type="number" placeholder=""></ion-input>
+  </ion-col>
+  
+  </ion-row>
+  
+  <ion-row>
+    <ion-col>
+    <ion-label style="margin: 16px 0px;" position="stacked">Admin notes</ion-label>
+    <ion-textarea rows="6" cols="20" placeholder="Enter any notes here..."></ion-textarea>
+    </ion-col>
+  </ion-row>
+
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,112 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+/* Ngx for DataTable Libraries */
+
+@import "~@swimlane\ngx-datatable\themes\bootstrap.css";
+@import "~@swimlane\ngx-datatable\themes\dark.css";
+@import "~@swimlane\ngx-datatable\themes\material.css";
+@import "~@swimlane\ngx-datatable\index.css";
+@import "~@swimlane\ngx-datatable\assets\app.css";
+@import "~@swimlane\ngx-datatable\assets\icons.css";
+
+.swiper-pagination-bullet-active {
+    background: #d6570d;
+    width: 4%;
+    border-radius: 12px;
+}
+
+.swiper-pagination-bullet {
+    opacity: 1.2;
+}
+
+.Complete-row
+{
+    border-left: green 5px solid;
+}
+
+.cancel-row
+{
+    border-left: red 5px solid;
+}
+
+.Working-row
+{
+    border-left: orange 5px solid;
+}
+
+.datatable-header
+{
+    width: fit-content !important;
+}
+
+.alert-head.sc-ion-alert-md {
+    text-align: center;
+    background: orange;
+}
+
+.alert-title.sc-ion-alert-md {
+    color: white;
+}
+
+.sc-ion-alert-md-h {
+    --width: 90%;
+}
+.sc-ion-alert-md-h {
+    --max-width: auto;
+}
+
+.ngx-datatable .datatable-body .datatable-scroll {
+    display: inline-block;
+    width: -webkit-fill-available;
+}
+
+
+.datatable-header-inner
+{
+width: -webkit-fill-available !important;
+}
+
+.ngx-datatable.bootstrap .datatable-body .datatable-body-row .datatable-body-cell {
+    padding: 0.75rem;
+    text-align: left;
+    vertical-align: top;
+    width: 115px;
+}
+
+.ngx-datatable.bootstrap .datatable-header .datatable-header-cell {
+    vertical-align: bottom;
+    padding: 0.75rem;
+    border-bottom: 1px solid #d1d4d7;
+    width: 115px;
+}
+
+ion-back-button
+{
+    display: block;
+}
+

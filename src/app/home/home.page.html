@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline"  routerDirection="back"></ion-back-button>
+    </ion-buttons>
+   
+    <ion-buttons slot="end">
+      <ion-icon name="notifications"></ion-icon>
+    </ion-buttons>
+    
+    <ion-buttons slot="end">
+      <ion-menu-button ></ion-menu-button>
+    </ion-buttons>
+    <ion-searchbar></ion-searchbar>
+    
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-item>
+  <ion-title>Schedule</ion-title>
+  <a slot="end" href="/menu/menu/tabs/appointment"  style="color:#fc7e00">
+    <p>+ Add Appointment</p> 
+  </a>
+</ion-item>
+
+<section> 
+  <ion-button size="small" (click)="btnAll()" class="btn-card1" style="--background:#3b3b3b	;">All</ion-button>
+  <ion-button size="small" (click)="btnLands()" class="btn-card1" style="--background:#15de1c;">Landscaping</ion-button>
+  <ion-button size="small" (click)="btnPost()" class="btn-card1" style="--background:#e69150;">Pest Control</ion-button>
+</section>
+
+<section>
+  <ion-button size="small" (click)="btnsetril()" class="btn-card1" style="--background: #24a7ff;">Sterilization</ion-button>
+  <ion-button size="small" (click)="btnRodent()" class="btn-card1" style="--background: #ff2c24;">Rodent Control</ion-button>
+  <ion-button size="small" (click)="btnCats()" class="btn-card1" style="--background: #ff24af;">Cats and Dogs</ion-button>
+</section>
+<ion-grid style="background-color:#d3d3d380;">
+<ion-row>
+  <ion-col size-sm="6">
+    
+  <ion-card class="horizantal-cardsnew" 
+  *ngFor="let userList of usersList">
+    <ion-card-header   (click)= "nextpage(userList.id)"> 
+    <!-- <img src= {{usersList.url}} /> -->
+    <img src="assets/images/garden.png" />
+    <ion-button class="btn-card" [ngStyle]="{'background-color': divColor}" size="small"  
+    style="--background:transpernt;">{{userList.title}}</ion-button>
+    <ion-card-subtitle style="height: 65px;
+    overflow: hidden;">
+      {{userList.problemdesc}}
+    </ion-card-subtitle>
+     <ion-card-subtitle class="ion-card-content-d">
+      {{userList.ReqeustDate}}
+    </ion-card-subtitle>
+
+    </ion-card-header>
+  <!--  <ion-card-header>
+      <ion-card-subtitle>Madison, WI</ion-card-subtitle> 
+    </ion-card-header>
+  
+    <ion-card-content>
+     40JD
+    </ion-card-content>-->
+    <ion-card-content>
+    <!-- <ion-button class="btn-card" (click)="nextpage()" expand="full" color="success">{{service.Name}}</ion-button> -->
+  </ion-card-content>
+  </ion-card>
+
+</ion-col>
+</ion-row>
+
+
+</ion-grid>
+
+
+</ion-content>

@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu/menu/tabs/home" icon="chevron-back-outline" ></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+     
+      <ion-buttons slot="end">
+        <ion-icon name="notifications"></ion-icon>
+      </ion-buttons>
+      
+      <ion-buttons slot="end">
+        <ion-menu-button ></ion-menu-button>
+      </ion-buttons>
+     
+    </ion-buttons>
+    <ion-title>Appointment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="appointmentForm">
+<ion-grid>
+    <ion-row>
+  <ion-col size-sm="6">
+    <ion-label style="margin: 16px 0px;" position="stacked">Services</ion-label>
+    <ion-input type="email"  name="names" placeholder="Landscaping" formControlName="Services"></ion-input>
+  </ion-col>
+
+  <ion-col size-sm="6">
+    <ion-label style="margin: 16px 0px;" position="stacked" >Contract</ion-label>
+    <ion-input type="email" name="contracts"  placeholder="Permenent" formControlName="contracts"></ion-input>
+  </ion-col>
+</ion-row>
+ 
+<ion-row>
+  <ion-col size-sm="6">
+    <ion-label style="margin: 16px ;" position="stacked">Location</ion-label>
+    <br>
+    <ion-button routerLink="/share-location" style="--background: #a3cdff;">
+    <img  src="assets/images/location2.png">
+  </ion-button>
+  </ion-col>
+
+  <ion-col size-sm="6" >
+
+    <ion-label style="margin: 16px 0px;" position="stacked"  >Upload Image</ion-label>
+    <!-- <input class="file" type="file" (input)="uploadFile($event)" > -->
+    <input class="file" type="file" id="file" style="--background: #ffc477; display:none"  (input)="uploadFile($event)" >
+      <img (click)="uploadImageClick()" src="assets/images/Images.png" style="width: 100%;"/>
+      
+    <!-- </ion-input> -->
+      
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col>
+    <ion-label  position="stacked" >Title</ion-label>
+    <ion-input type="email" name="contracts1"  placeholder="Titles" formControlName="contracts1"></ion-input>
+    
+    <ion-label color="primary" name="propdesc"  position="stacked">Your Problem</ion-label>
+    <ion-textarea rows="6" cols="20" placeholder="Enter any notes here..." formControlName="problemDesc"></ion-textarea>
+  </ion-col>
+</ion-row>
+</ion-grid>
+<!-- <ion-item lines="none">
+  <ion-label style="margin: 16px 0px; font-size: 24px;" position="stacked" >Title</ion-label>
+  <ion-input type="email" placeholder="Title"></ion-input>
+</ion-item>
+  <ion-item lines="none">
+    <ion-label color="primary" style="font-size: 24px;" position="stacked">Your Problem</ion-label>
+    <ion-textarea rows="6" cols="20" placeholder="Enter any notes here..."></ion-textarea>
+  </ion-item> -->
+
+  <div class="ion-text-center ion-margin-vertical">
+    <ion-button type="submit" expand="block" (click)="Addappoint()" size="default" color="orange" >Create Appointment</ion-button>
+    </div>
+  
+  <!--<ion-item>
+		<ion-label>Mobile Number</ion-label>
+                  <!-- 2 input tags suppose to show in the same line -->
+   <!-- <ion-input placeholder="coountry code"></ion-input> - <ion-input placeholder="phone number"> </ion-input>
+    
+  </ion-item>-->
+  
+</form>
+</ion-content>

@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+   
+      <ion-buttons slot="end">
+
+        
+
+        <ion-button>
+          <ion-icon name="search"></ion-icon>
+        </ion-button>
+       
+        <ion-button>
+          <ion-icon name="notifications"></ion-icon>
+        </ion-button>
+        
+        <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+       
+      
+       
+
+      <ion-buttons slot="start">
+        <ion-back-button icon="chevron-back-outline" ></ion-back-button>
+      </ion-buttons>
+    <ion-title>product</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+
+  <section>
+    <img src="assets/images/Icon1.png" hspace="2" (click)="btncat1()" >
+    <img src="assets/images/Icon2.png" hspace="2" (click)="btncat2()" />
+    <img src="assets/images/Icon3.png" hspace="2" (click)="btncat3()" >
+    <img src="assets/images/Icon4.png" hspace="2" (click)="btncat4()" />
+    <img src="assets/images/Icon5.png" hspace="2" (click)="btncat5()" />
+  </section>
+
+<ion-card class="horizantal-cards" style="width: 50%;">
+  <ion-card *ngFor="let x of usersList;let i=index" 
+  style="background-color: white;box-shadow: none;">
+        <ion-card-header (click)="nextpage(x.Item_ID)">
+          <img src="assets/images/1.png" />
+          <div>
+            {{x.itName}}
+          </div>
+     
+      <div style="display: flex;">
+
+        <div style="width: 50%;border-right: black;border-right-style: solid;
+        border-right-width: 1px;">
+         
+            {{x.Price}} JD
+         
+        </div>
+        <div style="width: 50%;
+        text-align: left;
+        margin-left: 5px;
+        color: goldenrod;">
+          
+            400 points
+         
+        </div>
+
+      </div>
+     
+    </ion-card-header>
+  
+   
+    <ion-button class="btn-card" (click)="nextpage(x.Item_ID)"  expand="full" color="success">Read More</ion-button>
+  
+  </ion-card>
+  </ion-card>
+  
+ 
+
+  </ion-content>
+

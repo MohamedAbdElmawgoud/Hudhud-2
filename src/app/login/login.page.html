@@ -1,0 +1,137 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col class="ion-text-center" size-sm="6" offset-sm="3" style="
+    padding: 0px;">
+
+    
+        <ion-img src="assets/images/log-in.png" style="background-color: lightgrey;" ></ion-img>
+     
+       
+    </ion-col>
+
+  </ion-row>
+ <div class="ion-no-padding" style="background-color: lightgray;">
+  <ion-grid >
+   
+    <ion-row>
+      <ion-col size-sm="8" offset-sm="2" style="background-color: lightgray;">
+      
+          <ion-card-header class="ion-text-center">
+            <ion-card-title><strong> Welcome to Al-Hudhud</strong> </ion-card-title>
+          </ion-card-header>
+
+          <form [formGroup]="loginForm">
+            
+            
+                <!-- <ion-label>Email</ion-label> -->
+                <br>
+                <br>
+                <ion-item lines="none">
+                  <ion-input formControlName="email"
+                  value="{{user.email}}"
+                  type="mail" placeholder="Enter Your mail" >
+                    <ion-icon class="icon" 
+                    style="margin-right: 6px;"
+                    name="mail-outline"></ion-icon>
+                  </ion-input>
+                </ion-item>
+                <!-- <ion-label>password</ion-label> -->
+               
+                
+                <ion-item lines="none">
+                  <ion-input formControlName="password" 
+                  value="{{user.password}}"
+                  type="password" placeholder="Enter Your Password" >
+                    <ion-icon style="margin-right: 6px;" name="lock-closed-outline" slot="start">
+                    </ion-icon>
+                  </ion-input>
+                </ion-item>
+            
+                <ion-item class="itemgray">
+                  <ion-checkbox color="primary"
+                  [(ngModel)]="remember" [ngModelOptions]="{standalone: true}"
+                  Type="md" slot="start" style="margin-right: 6px;"></ion-checkbox>
+                  <ion-label>Remember Password</ion-label>
+                  <a slot="end" href="forget-pass"  style="color:#fc7e00">
+                    <p>forget password?</p> 
+                  </a>
+               
+                 
+                </ion-item>
+
+                <div class="ion-text-center ion-margin-vertical">
+                  
+                   <ion-button type="submit" expand="block" size="default" color="orange" (click)="login()">Login</ion-button>
+                 </div>
+       
+                   <div class="ion-text-center ion-margin-bottom">
+                     <ion-button size="default"  expand="block" color="primary"(click)="loginFace()">Login with Facebook</ion-button>
+                     </div>
+             
+            </form>
+
+
+          <!-- <form [formGroup]="loginForm">
+
+           
+              <ion-item class="ion-margin-vertical" >
+                <ion-input placeholder="Name" type="text" formControlName="email" >
+                  <ion-icon style="
+                  margin-right: 6px;" name="person-outline"  
+                  ngModel type="email"  ></ion-icon></ion-input>
+              </ion-item>
+          
+
+           
+           
+            <ion-item class="ion-margin-vertical" >
+             
+              <ion-input placeholder="Password"  type="password" formControlName="password">
+                <ion-icon style="
+                margin-right: 6px;
+            " name="lock-closed-outline" slot="start"></ion-icon></ion-input>
+            </ion-item>
+         
+
+          
+        
+          <ion-item class="itemgray">
+          <ion-checkbox color="primary" Type="md" slot="start" style="margin-right: 6px;"></ion-checkbox>
+          <ion-label>Remember Password</ion-label>
+          <a slot="end" href="forget-pass"  style="color:#fc7e00">
+            <p>forget password?</p> 
+          </a>
+       
+         
+        </ion-item>
+      
+
+            <div class="ion-text-center ion-margin-vertical">
+           
+            <ion-button type="submit" expand="block" size="default" color="orange" (click)="login()">Login</ion-button>
+          </div>
+
+            <div class="ion-text-center ion-margin-bottom">
+              <ion-button size="default"  expand="block" color="primary">Login with Facebook</ion-button>
+              </div>
+            
+          </form> -->
+      </ion-col>
+    </ion-row>
+  
+    <ion-row>
+      <div class="ion-text-center">
+    If you don't have an account, please <a href='register'>
+      register</a> first!
+      </div>
+  </ion-row>
+
+  </ion-grid>
+</div>
+</ion-content>

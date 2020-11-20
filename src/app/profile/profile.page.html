@@ -1,0 +1,121 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu/menu/tabs/home" icon="chevron-back-outline" ></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+     
+      <ion-button>
+        <ion-icon name="notifications"></ion-icon>
+      </ion-button>
+      
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="card">
+    <div class="header">
+      <div class="avatar">
+       
+          <img src="assets/images/Ellipse 3.png" alt="" style="margin-top: 30px;" (click)="changeimg()">
+       
+      
+      </div>
+      <div style="margin-top: 0px;width: 100%;text-align: center;">
+        <p class="playername">{{FirstName}}</p>
+        <h6 class="country">{{Phone}}</h6>
+      </div>
+      <div style="width: 100%;display: flex;margin-top: 25px;">
+        <div style="width: 50%;margin-left: 20px;display: flex;border-right: gray;
+        border-right-style: double;">
+          <ion-avatar slot="start">
+            <img src="assets/images/points.png" style="border-radius: 0;">
+          </ion-avatar>
+          <ion-label>
+            <h2 style="margin-left: 10px;font-size: 16px;
+            font-weight: bold;">points</h2>
+            <p style="margin-left: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;">{{point}}</p>
+          </ion-label>
+         </div>
+         <div style="width: 50%;margin-left: 20px;display: flex;">
+          <ion-avatar slot="start">
+            <img src="assets/images/location.png" style="border-radius: 0;">
+          </ion-avatar>
+          <ion-label>
+            <h2 style="margin-left: 10px;font-size: 16px;
+            font-weight: bold;">Loction</h2>
+            <p style="margin-left: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;">{{LocationName}}</p>
+          </ion-label>
+
+         </div>
+         
+      </div>
+      <div style="width: 100%;margin-top: 30px;
+      text-align: center;">
+        <strong style="font-size: 40px;
+        font-family: emoji;">Settings</strong>
+      </div>
+      <ion-item class="itemsBlock" (click)="presentAlertPrompt()">
+        <img src="assets/images/Edit.png" style="position: relative;
+        bottom: 25px;
+        padding-top: 40px;
+        padding-bottom: 40px" slot="start"> 
+        <p style="position: relative;
+        bottom: 20px;" >Edit Profile</p>
+  <!-- <ion-button expand="full" color="white" (click)="presentAlertPrompt()">Profile</ion-button>--> 
+  </ion-item>
+
+  <ion-item class="itemsBlock" (click)="presentPassword()">
+    <img src="assets/images/ChangePass.png" style="position: relative;
+    bottom: 25px;
+    padding-top: 40px;
+    padding-bottom: 40px" slot="start"> 
+    <p style="position: relative;
+    bottom: 20px;">Change Password</p>
+    </ion-item>
+     
+    <ion-item class="itemsBlock" (click)="presentNotification()" >
+      <img src="assets/images/Notifactin.png" style="position: relative;
+      bottom: 25px;
+      padding-top: 40px;
+      padding-bottom: 40px" slot="start"> 
+      <p style="position: relative;
+      bottom: 20px;">Notification</p>
+      </ion-item>
+
+      <ion-item class="itemsBlock" (click)="presentLanguage()">
+        <img src="assets/images/Language.png" style="position: relative;
+        bottom: 25px;
+        padding-top: 40px;
+        padding-bottom: 40px" slot="start"> 
+        <p style="position: relative;
+        bottom: 20px;">Language</p>
+        </ion-item>
+      
+    </div>
+  </div>
+  
+
+  
+
+
+
+ 
+
+
+
+</ion-content>

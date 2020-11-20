@@ -1,0 +1,37 @@
+ion-toolbar{
+    text-align: center;
+    --background: orange;
+    color: white
+}
+h1{
+    text-align: center;
+
+}
+.visaImage{
+    width: 16%;
+    margin: 2%;
+    margin-top: 4%;
+    height: 60px;
+    margin-bottom: 0;
+   
+}
+
+
+.radio ,input[type=checkbox]:checked{
+  //  margin-top: 0;
+    margin: 5%;
+    background-color: black;
+    padding: 20px;
+    width: 20px;
+    height: 20px;
+    display: inline;
+    margin-right: 9.2%;
+}
+ 
+ion-button{
+    --background: orange;
+    color: white;
+    float: right;
+    margin: 10%;
+    margin-top: 2%
+}
