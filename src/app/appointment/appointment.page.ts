@@ -268,14 +268,15 @@ openeditprofiles() {
 
   
   async uploadFile($event) {
-    console.log("image is",$event.target.files[0])
+
+    console.log("Fileimage is",$event.target.files[0])
   //  this.image =$event.target.files[0]
      const reader = new FileReader();
    await  reader.addEventListener('load', (event: any) => {
       
           this.selectedFile = new ImageSnippet(event.target.result, $event.target.files[0]);
           this.image =event.target.result
-        //   console.log('event',event.target.result)
+        //   console.log('bufferImage',event.target.result)
            // event.target.result
           //   console.log('selectedFile',this.selectedFile.src.split(',')[1]);
              this.file = this.selectedFile.src.split(',')[1]
